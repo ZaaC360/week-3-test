@@ -9,3 +9,8 @@ Array.prototype.myMap = function(cb) {
     return result;
 }
 
+let evnnums = [2, 4, 6, 8];
+
+let oddnums = evnnums.myMap(evnnum => evnnum + 1);
+
+console.log(oddnums);
