@@ -1,7 +1,8 @@
-let searchbtn = document.getElementsByClassName("searchbtn")
+let searchbtn = document.getElementsByClassName("searchbtn")[0]
 let temp = document.getElementsByClassName("temp")
 let humidity = document.getElementsByClassName("humidity")
 let condition = document.getElementsByClassName("condition")
+let cityinput = document.getElementsByClassName("cityinput")[0]
 
 async function getWeather(city) {
   let response = await fetch(
@@ -25,3 +26,11 @@ async function getWeather(city) {
   }
 }
 
+searchbtn.addEventListener("click",() => {
+  let city = cityinput.value;
+
+  if (!city) return;
+
+  getWeather(city);
+
+});
