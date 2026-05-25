@@ -10,7 +10,14 @@ async function getWeather(city) {
   try {
     let data = await response.json();
 
+    let minTempdata = data.main.temp_min;
+    let maxTempdata = data.main.temp_max;
+    let conditiondata = data.weather[0].description;
+    let humiditydata = data.main.humidity;
 
+    temp[0].innerHTML  = `${minTempdata}°C/${maxTempdata}°C`;
+    condition[0].innerHTML = `${conditiondata}`;
+    humidity[0].innerHTML = `${humiditydata}% Humidity`;
 
   } 
   catch (error) {
